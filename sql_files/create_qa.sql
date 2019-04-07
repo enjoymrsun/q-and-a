@@ -18,9 +18,9 @@ SHOW TABLES;
 CREATE TABLE qa_users (
 	user_id		INT UNSIGNED	NOT NULL	AUTO_INCREMENT,
 	username	VARCHAR(32)   	NOT NULL,
-	password	VARCHAR(64)	
+	password	VARCHAR(64)
     email       VARCHAR(32)			NULL,
-    phone   
+    phone
     is_active   TINYINT     active or not or ban for unrealateed saying
     reg_time    INT  register time
     user_pic    VARCHAR(128) avator
@@ -35,29 +35,46 @@ CREATE TABLE qa_questions (
 	question_id		INT UNSIGNED	NOT NULL	AUTO_INCREMENT,
     title  VARCHAR(128) question title
     desc   TEXT
-    cat_id  int  category of questions
-	topic_id int  topics belong of this questions
-    user_id  int who ask this question
+    cat_id  INT  category of questions
+	topic_id INT  topics belong of this questions
+    user_id  INT who ask this question
     pub_time    public time
-    focus_num  int
-    reply_num   int
+    focus_num  INT
+    reply_num   INT
     view_num    INT
 );
 DESCRIBE lotr_books;
 
 
 CREATE TABLE qa_categories (
-	question_id		INT UNSIGNED	NOT NULL	AUTO_INCREMENT,
-    title  VARCHAR(128) question title
-    desc   TEXT
-    cat_id  int  category of questions
-	topic_id int  topics belong of this questions
-    user_id  int who ask this question
-    pub_time    public time
-    focus_num  int
-    reply_num   int
-    view_num    INT
+	cat_id		INT UNSIGNED	NOT NULL	AUTO_INCREMENT,
+    name  VARCHAR(32),
+    logo  VARCHAR(128)   TEXT,
+    desc VARCHAR(32),
+      parent_id INT
 );
+
+CREATE TABLE qa_topics (
+	topic_id		INT UNSIGNED	NOT NULL	AUTO_INCREMENT,
+	title  VARCHAR(128),
+	desc TEXT,
+	picture VARCHAR(128)
+	logo  VARCHAR(128)   TEXT,
+	desc VARCHAR(32),
+	parent_id INT
+);
+
+CREATE TABLE qa_questions_topics (
+	qt_id		INT UNSIGNED	NOT NULL	AUTO_INCREMENT,
+	question_id, INT,
+	topic_id INT,
+	picture VARCHAR(128)
+	 logo  VARCHAR(128)   TEXT,
+	desc VARCHAR(32),
+  parent_id INT
+);
+
+
 
 CREATE TABLE lotr_regions (
 	regions_id				INT UNSIGNED	NOT NULL	AUTO_INCREMENT,
@@ -72,6 +89,9 @@ CREATE TABLE lotr_regions (
 	UNIQUE INDEX (name)
 );
 DESCRIBE lotr_regions;
+
+
+
 
 
 CREATE TABLE lotr_characters (
