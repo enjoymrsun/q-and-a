@@ -6,7 +6,14 @@
  * Time: 上午10:09
  */
 
-class TopicController
-{
+namespace admin\controller;
+
+use framework\core\Controller;
+
+/*
+ * create/read/update/delete topics
+ */
+
+class TopicController extends Controller {
 
 }

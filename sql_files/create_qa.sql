@@ -48,9 +48,9 @@ DESCRIBE lotr_books;
 
 CREATE TABLE qa_categories (
 	cat_id		INT UNSIGNED	NOT NULL	AUTO_INCREMENT,
-    name  VARCHAR(32),
-    logo  VARCHAR(128)   TEXT,
-    desc VARCHAR(32),
+    cat_name  VARCHAR(32),
+    cat_logo  VARCHAR(128)   TEXT,
+    cat_desc VARCHAR(32),
       parent_id INT
 );
 
